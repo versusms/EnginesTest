@@ -17,9 +17,9 @@ namespace EnginesTest.Models
     {
         public DataModelContainer()
             // Подключение к LocalDB
-            //: base("name=LocalDataModelContainer")
+            : base("name=LocalDataModelContainer")
             // Подключение к удаленному MSSQL-серверу
-            : base("name=RemoteDataModelContainer")
+            //: base("name=RemoteDataModelContainer")
         {
         }
     
