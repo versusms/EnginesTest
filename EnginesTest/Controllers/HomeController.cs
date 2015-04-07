@@ -55,16 +55,15 @@ namespace EnginesTest.Controllers
                 doc.LoadXml(content);
                 result.Success = true;
                 result.DataSet = JsonConvert.SerializeXmlNode(doc);
-                StreamWriter rssfile = new StreamWriter(HttpRuntime.AppDomainAppPath + "/App_Data/rss.xml", true);
+                StreamWriter rssfile = new StreamWriter(HttpRuntime.AppDomainAppPath + "/App_Data/rss.xml");
                 rssfile.Write(content);
                 rssfile.Close();
             }
             catch (Exception re)
             {
                 try
-                {
-                    StreamReader rssfile = new StreamReader(HttpRuntime.AppDomainAppPath + "/App_Data/rss.xml", true);
-                    content = rssfile.ReadToEnd();
+                {                    
+                    content = client.DownloadString(HttpRuntime.AppDomainAppPath + "/App_Data/rss.xml");
                     doc.LoadXml(content);
                     result.Success = true;
                     result.DataSet = JsonConvert.SerializeXmlNode(doc);
