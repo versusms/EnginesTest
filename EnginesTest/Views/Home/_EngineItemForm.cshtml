@@ -1,0 +1,55 @@
+﻿<script type="text/html" id="engine-itemform-template">              
+    <h2 class="fg-white">UID</h2>
+    <div class="input-control text">
+        <input type="text" id="engine-itemform-uid" name="UID" value="{%UID%}" placeholder="input UID..." readonly/>
+        <span class="fg-lightBlue">This field fills automaticly</span>
+    </div>    
+    <h2 class="fg-white"><span class="fg-red">*</span>Model</h2>
+    <div class="input-control text">
+        <input type="text" id="engine-itemform-model" name="Model" value="{%Model%}" maxlength="11" placeholder="input model..."/>
+        <button class="btn-clear"></button>        
+    </div>
+    <h2 class="fg-white"><span class="fg-red">*</span>Serial Number</h2>
+    <div class="input-control text">
+        <input type="text" id="engine-itemform-serialnumber" name="SerialNumber" value="{%SerialNumber%}" maxlength="10" placeholder="input serial number..."/>
+        <button class="btn-clear"></button>
+    </div> 
+    <h2 class="fg-white"><span class="fg-red">*</span>Configuration</h2>
+    <div class="input-control select">
+        <select id="engine-itemform-configuration" name="Configuration">
+            <option value="I">I-Type</option>
+            <option value="V">V-Type</option>
+            <option value="W">W-Type</option>
+        </select>
+    </div> 
+    <h2 class="fg-white"><span class="fg-red">*</span>Cylinders</h2>
+    <div class="input-control text">
+        <input type="number" id="engine-itemform-cylinders" name="Cylinders" value="{%Cylinders%}" placeholder="input cylinders number..."/>
+        <button class="btn-clear"></button>
+    </div>
+    <h2 class="fg-white"><span class="fg-red">*</span>Engine Capacity, L</h2>
+    <div class="input-control text">
+        <input type="text" id="engine-itemform-enginecapacity" name="EngineCapacity" value="{%EngineCapacity%}" placeholder="input engine capacity..."/>
+        <button class="btn-clear"></button>
+    </div>
+    <h2 class="fg-white"><span class="fg-red">*</span>Valvers per Cylinder</h2>
+    <div class="input-control text">
+        <input type="number" id="engine-itemform-valverspercylinder" name="ValversPerCylinder" value="{%ValversPerCylinder%}" placeholder="input number valvers per cylinder..."/>
+        <button class="btn-clear"></button>
+    </div>
+    <h2 class="fg-white"><span class="fg-red">*</span>Fuel Type</h2>
+    <div class="input-control select">
+        <select id="engine-itemform-fueltype" name="FuelType">
+            <option value="G">Gasoline</option>
+            <option value="D">Diesel</option>            
+        </select>
+    </div> 
+    <h2 class="fg-white"><span class="fg-red">*</span>Rated Torque, Nm</h2>
+    <div class="input-control text">
+        <input type="number" id="engine-itemform-ratedtorque" name="RatedTorque" value="{%RatedTorque%}" placeholder="input rated torque..."/>
+        <button class="btn-clear"></button>
+    </div>
+    <br />
+    <button class="button primary" type="button" onclick="Application.Engines.Save()">Save</button>
+    <button class="button" type="button" onclick="Application.Engines.Select(Application.Engines.Current)">Cancel</button>
+</script>

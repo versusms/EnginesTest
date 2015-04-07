@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="DataModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Measurements" EntityType="DataModel.Measurement" />
+    <EntitySet Name="Tests" EntityType="DataModel.Test" />
+    <EntitySet Name="Engines" EntityType="DataModel.Engine" />
+    <EntitySet Name="Users" EntityType="DataModel.User" />
+    <AssociationSet Name="TestMeasurement" Association="DataModel.TestMeasurement">
+      <End Role="Test" EntitySet="Tests" />
+      <End Role="Measurement" EntitySet="Measurements" />
+    </AssociationSet>
+    <AssociationSet Name="EngineTest" Association="DataModel.EngineTest">
+      <End Role="Engine" EntitySet="Engines" />
+      <End Role="Test" EntitySet="Tests" />
+    </AssociationSet>
+    <AssociationSet Name="UserTest" Association="DataModel.UserTest">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Test" EntitySet="Tests" />
+    </AssociationSet>
+    <EntitySet Name="JobTitles" EntityType="DataModel.JobTitle" />
+    <AssociationSet Name="JobTitleUser" Association="DataModel.JobTitleUser">
+      <End Role="JobTitle" EntitySet="JobTitles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Measurement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Test" Relationship="DataModel.TestMeasurement" FromRole="Measurement" ToRole="Test" />
+    <Property Type="Int32" Name="TestId" Nullable="false" />
+    <Property Type="Int32" Name="Torque" Nullable="false" />
+    <Property Type="Int32" Name="RPM" Nullable="false" />
+    <Property Type="Double" Name="FuelConsumption" Nullable="false" />
+    <Property Type="Double" Name="TCoolant" Nullable="false" />
+    <Property Type="Double" Name="TOil" Nullable="false" />
+    <Property Type="Double" Name="TFuel" Nullable="false" />
+    <Property Type="Double" Name="TExhaustGas" Nullable="false" />
+    <Property Type="Double" Name="POil" Nullable="false" />
+    <Property Type="Double" Name="PExhaustGas" Nullable="false" />
+    <Property Type="Double" Name="PowerHP" Nullable="false" />
+    <Property Type="Double" Name="PowerKWh" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Test">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Measurements" Relationship="DataModel.TestMeasurement" FromRole="Test" ToRole="Measurement" />
+    <Property Type="String" Name="UID" Nullable="false" MaxLength="32" />
+    <Property Type="DateTime" Name="DateTime" Nullable="false" />
+    <NavigationProperty Name="Engine" Relationship="DataModel.EngineTest" FromRole="Test" ToRole="Engine" />
+    <Property Type="Int32" Name="EngineId" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="DataModel.UserTest" FromRole="Test" ToRole="User" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="Double" Name="TIncomingAir" Nullable="false" />
+    <Property Type="Double" Name="PBarometric" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Engine">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Tests" Relationship="DataModel.EngineTest" FromRole="Engine" ToRole="Test" />
+    <Property Type="String" Name="UID" Nullable="false" MaxLength="32" />
+    <Property Type="String" Name="Model" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="SerialNumber" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Configuration" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="Cylinders" Nullable="false" />
+    <Property Type="Double" Name="EngineCapacity" Nullable="false" />
+    <Property Type="Int32" Name="ValversPerCylinder" Nullable="false" />
+    <Property Type="String" Name="FuelType" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="RatedTorque" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Tests" Relationship="DataModel.UserTest" FromRole="User" ToRole="Test" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Phone" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+    <NavigationProperty Name="JobTitle" Relationship="DataModel.JobTitleUser" FromRole="User" ToRole="JobTitle" />
+    <Property Type="Int32" Name="JobTitleId" Nullable="false" />
+    <Property Type="String" Name="ProfileImage" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="SecurityUM" Nullable="false" />
+    <Property Type="Boolean" Name="SecurityTV" Nullable="false" />
+    <Property Type="Boolean" Name="SecurityTM" Nullable="false" />
+    <Property Type="String" Name="Login" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="32" />
+    <Property Type="Boolean" Name="Deleted" Nullable="false" />
+  </EntityType>
+  <Association Name="TestMeasurement">
+    <End Type="DataModel.Test" Role="Test" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DataModel.Measurement" Role="Measurement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Test">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Measurement">
+        <PropertyRef Name="TestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EngineTest">
+    <End Type="DataModel.Engine" Role="Engine" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DataModel.Test" Role="Test" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Engine">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Test">
+        <PropertyRef Name="EngineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserTest">
+    <End Type="DataModel.User" Role="User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DataModel.Test" Role="Test" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Test">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="JobTitle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="100" />
+    <NavigationProperty Name="Users" Relationship="DataModel.JobTitleUser" FromRole="JobTitle" ToRole="User" />
+    <Property Type="Boolean" Name="Deleted" Nullable="false" />
+  </EntityType>
+  <Association Name="JobTitleUser">
+    <End Type="DataModel.JobTitle" Role="JobTitle" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="DataModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobTitle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="JobTitleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

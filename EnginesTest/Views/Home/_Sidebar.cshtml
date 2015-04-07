@@ -1,0 +1,36 @@
+﻿<nav id="leftmenu" class="sidebar">
+    <ul>
+        <li class="title">Choose Item</li>
+        <li><a href="#/dashboard" onclick="Application.Dashboard.InitWorkspace();"><i class="icon-dashboard"></i>Dashboard</a></li>
+        @if (ViewBag.STV)
+        {
+            <li><a href="#/api/engines" onclick="Application.Engines.InitWorkspace();"><i class="icon-cog"></i>Engines</a></li>
+        }
+        @if (ViewBag.SUM)
+        {
+            <li>
+                <a class="dropdown-toggle" href="#"><i class="icon-user-3"></i>User Management</a>
+                <ul class="dropdown-menu" data-role="dropdown">
+                    <li><a href="#/api/users" onclick="Application.Users.InitWorkspace();">Users</a></li>
+                    <li><a href="#/api/jobtitles" onclick="Application.JobTitles.InitWorkspace();">Job Titles</a></li>
+                </ul>
+            </li>
+        }
+        <!-- Weather widget -->
+        <li class="title">Weather</li>
+        <div id="ajaxweather" class="widget-item">
+            <h6 class="fg-white light"><img src="http://openweathermap.org/img/w/01d.png" title="" /><span class="location"></span></h6>
+            <div class="temperature"><i class="icon-thermometer"></i><span class="temp_current">+00.0</span>&deg;
+                <span class="xscript">                    
+                    <sup><i class="icon-arrow-up-4"></i><span class="temp_max">+00.0</span>&deg;</sup>
+                    <sub><i class="icon-arrow-down-4"></i><span class="temp_min">+00.0</span>&deg;</sub>
+                </span>
+            </div>
+            <div>
+                <i class="icon-weather-4" title="Humidity"></i> <span class="humidity"></span>%; 
+                <i class="icon-github-6" title="Pressure"></i> <span class="pressure"></span>hpa; 
+                <i class="icon-wind" title="Wind"></i> <span class="wind"></span>m/s
+            </div>
+        </div>
+    </ul>
+</nav>

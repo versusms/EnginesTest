@@ -1,0 +1,21 @@
+﻿<nav id="topmenu" class="navigation-bar dark">
+    <nav class="navigation-bar-content">
+        <a class="element title-element" href="/"><span class="icon-steering-wheel"></span> ENGINES TEST APP</a>
+        <span class="element-divider"></span>
+        <a class="element entity-action" href="javascript:void(0);" id="item-create"><i class="icon-plus-2"></i> Create</a>
+        <a class="element entity-action" href="javascript:void(0);" id="item-edit"><i class="icon-pencil"></i> Edit</a>        
+        <a class="element entity-action" href="javascript:void(0);" id="item-delete"><i class="icon-remove"></i> Delete</a>
+        <a class="element entity-action" href="javascript:void(0);" id="item-restore"><i class="icon-spin"></i> Restore</a>     
+        <span class="element-divider place-right"></span>
+        <div class="element user-action place-right">
+            <a class="dropdown-toggle image-button image-left" href="#">                
+                @ViewBag.UserIdentity
+                <img id="avatar" src="@Url.Content("~/Content/Images/ProfileImages/" + (ViewBag.UserProfileImage != null ? ViewBag.UserProfileImage : "noprofile.jpg"))"/> 
+            </a>
+            <ul class="dropdown-menu place-right" data-role="dropdown">
+                <li><a href="#/profile" onclick="Application.ProfileEdit()">Profile</a></li>
+                <li>@Html.ActionLink("Logout", "Logout", "Security")</li>                
+            </ul>
+        </div>      
+    </nav>    
+</nav>

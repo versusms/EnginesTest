@@ -1,0 +1,26 @@
+﻿<script type="text/html" id="test-itemview-template">
+    <b class="fg-lightBlue">UID:</b> {%UID%};
+    <b class="fg-lightBlue">Date/Time:</b> {%DateTime%};
+    <b class="fg-lightBlue">Tester:</b> {%User%};
+    <b class="fg-lightBlue">Incoming Air, C&deg;:</b> {%TIncomingAir%};
+    <b class="fg-lightBlue">Barometric Pressure, bar:</b> {%PBarometric%}
+    <div id="workspace-charts">
+        <div id="chart-RPMTorque" class="chart"></div>    
+        <div id="chart-RPMPowerHP" class="chart"></div>
+        <div id="chart-RPMPowerKWh" class="chart"></div>
+        <div id="chart-RPMFuelConsumption" class="chart"></div>
+        <div id="chart-TemperatureCO" class="chart"></div>
+        <div id="chart-TemperatureFE" class="chart"></div>
+        <div id="chart-Pressure" class="chart"></div>
+        <div id="test-controls" class="chart">
+            <div id="sensors-status">
+                Sensors Status <br />
+                <span id="sensors-status-text" class="sensors offline">offline</span>
+            </div>
+            <div id="test-timing">00:00.000</div>
+            <div id="test-buttons">
+                <button class="button primary large" type="button" onclick="Application.Tests.Interrupt()">Interrupt test</button>
+            </div>
+        </div>
+    </div>
+</script>

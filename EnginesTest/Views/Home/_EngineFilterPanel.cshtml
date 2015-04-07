@@ -1,0 +1,65 @@
+﻿<nav id="filters-engines" class="navigation-bar entity-filters">
+    <nav class="navigation-bar-content">
+        <div class="element input-element">
+            <div class="input-control text">
+                <input type="text" placeholder="Search..." id="filters-engines-search">
+                <button class="btn-search"></button>
+            </div>
+        </div>
+        <span class="element-divider"></span>
+        <div class="element input-element">
+            <div class="input-control checkbox">
+                <label>
+                    <input type="checkbox" checked="checked" id="filters-engines-typei"/>
+                    <span class="check"></span>
+                    I-type
+                </label>
+            </div>
+        </div>
+        <div class="element input-element">
+            <div class="input-control checkbox">
+                <label>
+                    <input type="checkbox" checked="checked" id="filters-engines-typev"/>
+                    <span class="check"></span>
+                    V-type
+                </label>
+            </div>
+        </div>
+        <div class="element input-element">
+            <div class="input-control checkbox">
+                <label>
+                    <input type="checkbox" checked="checked" id="filters-engines-typew"/>
+                    <span class="check"></span>
+                    W-type
+                </label>
+            </div>
+        </div>
+        <span class="element-divider"></span>
+        <div class="element input-element">
+            <div class="input-control checkbox">
+                <label>
+                    <input type="checkbox" checked="checked" id="filters-engines-fuelg"/>
+                    <span class="check"></span>
+                    Gasoline
+                </label>
+            </div>
+        </div>
+        <div class="element input-element">
+            <div class="input-control checkbox">
+                <label>
+                    <input type="checkbox" checked="checked" id="filters-engines-fueld"/>
+                    <span class="check"></span>
+                    Diesel
+                </label>
+            </div>
+        </div>   
+    </nav>    
+</nav>
+<script type="text/javascript">
+    $('#filters-engines input').change(function () {
+        Application.Engines.ApplyFilters();
+    })
+    .keyup(function () {
+        Application.Engines.ApplyFilters();
+    });
+</script>

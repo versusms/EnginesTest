@@ -1,0 +1,21 @@
+﻿<nav id="filters-jobtitles" class="navigation-bar entity-filters">
+    <nav class="navigation-bar-content">
+        <div class="element input-element">
+            <div class="input-control checkbox">
+                <label>
+                    <input type="checkbox" id="filters-jobtitles-deleted"/>
+                    <span class="check"></span>
+                    Show Deleted Job Titles
+                </label>
+            </div>
+        </div>          
+    </nav>    
+</nav>
+<script type="text/javascript">
+    $('#filters-jobtitles input').change(function () {
+        Application.JobTitles.ApplyFilters();
+    })
+    .keyup(function () {
+        Application.JobTitles.ApplyFilters();
+    });
+</script>

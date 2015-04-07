@@ -1,0 +1,58 @@
+﻿<script type="text/html" id="user-profile-template">    
+        <div class="user-profile-image">
+            <form id="user-itemform-profileupload">
+                <h2 class="fg-white">Profile Image</h2>
+                <div class="input-control">
+                    <img src="@Url.Content("~/Content/Images/ProfileImages/{%ProfileImage%}")" class="profile-image">
+                </div>
+                <br />
+                <div class="input-control file">        
+                    <input type="file" id="user-itemform-profileimage" name="ProfileImage"/>
+                    <button class="btn-file"></button>
+                </div>
+            </form>
+        </div>
+        <div class="user-profile-data">            
+            <h2 class="fg-white"><span class="fg-red">*</span>Login: <span class="fg-lightBlue">{%Login%}</span></h2>
+            <input type="hidden" id="user-itemform-login" name="Login" value="{%Login%}"/>
+            <h2 class="fg-white"><span class="fg-red">*</span>Password</h2>
+            <div class="input-control text">
+                <input type="password" id="user-itemform-password" name="Password" value="" placeholder="input password..."/>
+                <button class="btn-reveal"></button>
+                <span class="fg-lightBlue">Fill this field only if you create new user or want to change password for existing one</span>
+            </div>
+            <h2 class="fg-white"><span class="fg-red">*</span>Password Confirm</h2>
+            <div class="input-control text">
+                <input type="password" id="user-itemform-passwordconfirm" name="PasswordConfirm" value="" placeholder="input password confirm..."/>
+                <button class="btn-reveal"></button>
+                <span class="fg-lightBlue">Fill this field only if you create new user or want to change password for existing one</span>
+            </div> 
+            <h2 class="fg-white"><span class="fg-red">*</span>First Name</h2>
+            <div class="input-control text">
+                <input type="text" id="user-itemform-firstname" name="FirstName" value="{%FirstName%}" placeholder="input first name..."/>
+                <button class="btn-clear"></button>
+            </div> 
+            <h2 class="fg-white"><span class="fg-red">*</span>Last Name</h2>
+            <div class="input-control text">
+                <input type="text" id="user-itemform-lastname" name="LastName" value="{%LastName%}" placeholder="input last name..."/>
+                <button class="btn-clear"></button>
+            </div>
+            <h2 class="fg-white">Middle Name</h2>
+            <div class="input-control text">
+                <input type="text" id="user-itemform-middlename" name="MiddleName" value="{%MiddleName%}" placeholder="input middle name..."/>
+                <button class="btn-clear"></button>
+            </div>
+            <h2 class="fg-white"><span class="fg-red">*</span>Job Title: <span class="fg-lightBlue">{%JobTitle%}</span></h2>
+            <h2 class="fg-white"><span class="fg-red">*</span>Phone</h2>
+            <div class="input-control text">
+                <input type="text" id="user-itemform-phone" name="Phone" value="{%Phone%}" placeholder="input phone..."/>
+                <button class="btn-clear"></button>
+            </div>
+            <h2 class="fg-white"><span class="fg-red">*</span>Email</h2>
+            <div class="input-control text">
+                <input type="text" id="user-itemform-email" name="Email" value="{%Email%}" placeholder="input email..."/>
+                <button class="btn-clear"></button>
+            </div><br />
+            <button class="button primary" type="button" onclick="Application.Users.Save(true)">Save</button>
+        </div>
+</script>

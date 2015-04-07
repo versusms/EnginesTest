@@ -1,0 +1,325 @@
+﻿body {
+    overflow: hidden;
+}
+
+table td {
+    vertical-align: top;
+}
+
+.login-container {
+    width: 700px;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.login-container .logo {
+    font-size: 20em;  
+    color: #333;  
+}
+
+.login-container table {
+    width: 100%;
+}
+
+.login-logo {    
+    width: 1em;
+    padding-right: 1em;
+    border-right: 1px solid #3f3f3f;
+}
+.login-form {
+    padding-left: 1em;
+}
+
+.title-element {
+    width: 270px;
+}
+
+#leftmenu {
+    float: left;
+    width: 270px;
+}
+#content-primary {
+    float: left;
+    background-color: #3d3d3d;
+    box-shadow: rgba(0,0,0,0.5) 0 5px 5px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.entity-action, .entity-filters {
+    display: none;
+}
+
+.listinline .list {
+    display: inline-block !important;
+}
+
+.app-systemdialog {
+    height: 160px;
+    padding: 20px 20px 0 20px;
+}
+.systemdialog-icon {
+    float: left;
+    display: inline-block;
+    font-size: 5em !important;
+    height: 80px;
+    line-height: 80px;
+    margin-right: 20px;
+}
+.app-systemdialog-buttonpanel {
+    position:absolute;
+    left:0;
+    bottom:0;
+    width: 100%;
+    text-align: center;
+}
+.element.breadcrumbs {
+    padding: 8px !important;
+}
+.element.breadcrumbs ul li:last-child a {
+    margin-right: 14px;
+}
+.entity-deleted-false .deleted-mark {
+    display: none;
+}
+
+#entities-list, #entity-details {
+    overflow: auto;
+    float: left;
+}
+#entities-list.listview-outlook {
+    width: 350px;
+}
+#entities-list.listview {
+    width: 307px;
+}
+
+#entity-details {
+    padding: 10px 20px;
+}
+
+#autonews, #autonews h6 {
+     color: #fff;
+}
+
+#ajaxnews a, #autonews a {
+    text-align: center;  
+    float: left;
+}
+#ajaxnews a img, #autonews a img {
+    width: 80px;  
+    padding: 0 5px 5px 0;    
+}
+.widget-item {
+    margin: 20px 20px 0 20px;
+    font-size: 0.7em;
+    line-height: 1.2em;
+    color: #fff;
+}
+
+#ajaxweather h6 {
+    margin: 0px;
+}
+
+#ajaxweather .temperature {
+    font-size: 3em;
+}
+
+#ajaxweather .temperature sub, #ajaxweather .temperature sup {
+    font-size: 0.4em;
+    position: absolute;
+}
+
+#ajaxweather .temperature sup {
+    top: 0.5em;
+}
+
+#ajaxweather .temperature sub {
+    bottom: -0.2em;
+}
+
+span.xscript {
+    position: relative;
+    display: inline-block;
+    height: 1em;
+    width: 70px;
+}
+#ajaxnews h6 {
+    color: #fff;
+    margin: 0px;
+}
+
+.chart {
+    width: 24%;
+    height: 48%;
+    float: left;
+}
+
+.listview-outlook {
+    background: white;
+}
+
+#workspace-list, #workspace-dashboard, #workspace-empty {
+    display: none;
+}
+
+#workspace-empty {
+    overflow: auto;
+}
+
+#workspace-charts {
+    height: 100%;
+}
+
+.metro .input-control.switch input[type="checkbox"]:checked ~ .check {
+    background-color: #1ba1e2 !important;
+}
+.metro .input-control.switch.light .check:after {
+    outline: 2px #fefefe solid;
+    border: 1px #fefefe solid;
+    background: #fefefe;
+}
+
+#entity-details, #entity-details form {
+    position: relative;
+}
+
+#entity-details .profile-image {
+    width: 160px;
+    height: 160px;
+}
+
+.user-profile-image {
+    float: left;
+    position: absolute;
+    width: 160px;
+}
+
+#entity-details > .user-profile-image {
+    top: 10px;
+}
+.user-profile-data {
+    margin-left: 180px;
+}
+
+.metro .listview {
+    padding: 10px 3px;
+}
+
+.metro .listview .list.bg-lightBlue {
+    border: 4px #4390df solid;
+    float: left;
+    margin-right: 10px;
+}
+.metro .listview .list.bg-lightBlue.selected {
+    border: 4px #eaeaea solid;
+}
+.metro .listview .list.bg-lightBlue.selected:before {
+    color: #4390df;
+}
+.metro .listview .list.bg-lightBlue.selected:after {
+    border-top: 28px solid #eaeaea;
+}
+
+#engines-tests {
+    background: #fff;
+    padding: 5px 10px;
+    margin-top: 5px;
+}
+
+#engines-tests tr {
+    cursor: pointer;
+}
+
+#engines-tests tbody tr:hover, #engines-tests tbody tr:hover a {
+    background: #4390df ;
+    color: #fff;
+}
+.metro .window.flat.dark, .metro .window.flat.dark .caption .btn-close {
+  background-color: #3d3d3d;
+  border: 1px #3d3d3d solid;
+  color: #fff;
+}
+.metro .window.flat.dark .caption {
+    background-color: #3d3d3d;
+}
+.metro .window.flat.dark .app-systemdialog-buttonpanel {
+    border-color: #333;
+}
+.metro .window.flat.dark .app-systemdialog-buttonpanel .panel-header  {
+    background-color: #333;    
+}
+
+#test-controls {
+    text-align: center;
+    font-size: 3em;
+    padding-top: 1.5em;
+    display: none;
+}
+
+#test-buttons {
+    display: none;
+}
+
+.sensors.offline {
+    display: inline;
+    color: #e51400 !important;
+    animation: blink 1s steps(1) infinite;
+    -webkit-animation: blink 1s steps(1) infinite;
+}
+.sensors {
+    color: #60a917;
+}
+@keyframes blink { 50% { color: transparent; } }
+@-webkit-keyframes blink { 50% { color: transparent; } }
+
+@media screen and (max-device-width: 1200px) {
+     .user-profile-image {
+        float: none !important;
+        position: relative !important;
+        width: 100% !important;
+    }
+     #entity-details .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+    .user-profile-data {
+        margin-left: 0px !important;
+    }
+    #test-controls {
+        padding-top: 1em;
+    }
+}
+
+table.invisible {
+    border: 0px;
+    background-color: transparent !important;
+}
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}

@@ -1,0 +1,18 @@
+﻿<script type="text/html" id="user-item-template">
+    <a href="#" class="list entity-deleted-{%Deleted%}" id="user-item-{%Id%}">
+        <div class="list-content">
+            <img src="@Url.Content("~/Content/Images/ProfileImages/{%ProfileImage%}")" class="icon">
+            <div class="data">
+                <span class="list-title">
+                    <span class="place-right icon-flag-2 fg-red smaller deleted-mark"></span>
+                    {%FirstName%} {%MiddleName%} {%LastName%}
+                </span>                
+                <span class="list-subtitle">
+                    <span class="place-right deleted-mark">Deleted</span>
+                    {%JobTitle%}
+                </span>
+                <span class="list-remark">{%Login%}; {%Email%}; {%Phone%}</span>
+            </div>
+        </div>
+    </a>
+</script>

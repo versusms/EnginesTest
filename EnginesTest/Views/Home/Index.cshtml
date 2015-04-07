@@ -1,0 +1,141 @@
+﻿@{
+    ViewBag.Title = "Engine Test App";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+    var cuser = @Html.Raw(ViewBag.CurrentUser);
+</script>
+<!--# HEADER #-->
+@Html.Partial("_TopNavigation")
+<!--# END HEADER #-->
+
+<!--# SIDEBAR #-->
+@Html.Partial("_Sidebar")
+<!--# END SIDEBAR #-->
+
+<div id="content-primary">
+    <h1 id="section-title" class="fg-white"></h1>
+    <nav id="breadcrumbs" class="navigation-bar dark">
+        <nav class="navigation-bar-content"> 
+            <nav class="element input-element breadcrumbs">
+                <ul>
+                    <li><a href="#"><i class="icon-home"></i></a></li>
+                    <li class="active"><a href="#">Dashboard</a></li>
+                </ul>
+            </nav>
+        </nav>
+    </nav>
+    <!--# FILTERS PANELS #-->
+    @Html.Partial("_EngineFilterPanel")
+    @Html.Partial("_JobTitleFilterPanel")
+    @Html.Partial("_UserFilterPanel")    
+    <!--# END FILTERS PANELS #-->           
+
+    <div id="workspace-dashboard">
+        <table class="invisible">
+            <tr>
+                <td>
+                    <div class="tile bg-lightBlue">
+                        <div class="padding10 fg-white">
+                            <br />
+                            <b>Engines:</b> @ViewBag.EnginesCount<br /><br />
+                            <b>Tests:</b> @ViewBag.TestsCount
+                        </div>
+                    </div>
+                    <a href="http://www.topgearrussia.ru/" class="tile bg-lightBlue" data-click="transform">
+                        <div class="tile-content image">
+                            <img src="http://s0a.topgearrussia.ru/sh/8edd17681d612ef82b50b24b949ff0d6/images/preview/27/c8/c6/69312d21183aed2983232679e9.jpeg" />
+                        </div>
+                        <div class="tile-status">
+                            <span class="name">Top Gear Russia</span>
+                        </div>
+                    </a>                    
+                </td>
+                <td rowspan="2">
+                    <div class="tile bg-lightBlue triple double-vertical" id="autonews" data-click="transform">
+                        <div class="tile-content"><br />&nbsp;&nbsp;&nbsp;&nbsp;Loading...</div>
+                        <div class="tile-status">
+                            <span class="name">Auto news</span>
+                            <span class="badge bg-orange">0</span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="tile bg-lightBlue double live" data-role="live-tile" data-click="transform">
+                        <a href="http://www.topgearrussia.ru/news/car-news/227100/18a80ed3.html" class="tile-content image">
+                            <img src="http://s0a.topgearrussia.ru/sh/37ca9b8da6aa0163bf6624eeefde0be7/images/preview/42/5c/d3/38cbc50269c1ecceb385350d02.jpeg">
+                            <div class="brand bg-dark opacity">
+                                <span class="text">LR ПОСТРОИТ РОСКОШНЫЙ RANGE ROVER EVOQUE SVAUTOBIOGRAPHY</span>
+                            </div>
+                        </a>
+                        <a href="http://www.topgearrussia.ru/news/car-news/227102/eb9478ef.html" class="tile-content image">
+                            <img src="http://s0b.topgearrussia.ru/sh/5c7a9cae9e50e2c5426beee9633f9643/images/preview/b7/76/44/2842eef28b6fb25054f7035bad.jpeg">
+                            <div class="brand bg-dark opacity">
+                                <span class="text">ОБНОВЛЕННЫЙ MITSUBISHI OUTLANDER ВЫШЕЛ НА РОССИЙСКИЙ РЫНОК</span>
+                            </div>
+                        </a>
+                        <a href="http://www.topgearrussia.ru/videos/227103/0863c0ef.html" class="tile-content image">
+                            <img src="http://s09.topgearrussia.ru/sh/86a5a5f7ad753df2a2b2484b74f25f62/images/preview/68/25/ab/09dbfd48f231ec7c43e046cf99.jpeg">
+                            <div class="brand bg-dark opacity">
+                                <span class="text">ДОБРО ПОЖАЛОВАТЬ НА САМЫЙ КРУПНЫЙ СЛЕТ MCLAREN F1 GTR</span>
+                            </div>
+                        </a>
+                        <a href="http://www.topgearrussia.ru/cars/car-reviews/227106/78b3c3e4.html" class="tile-content image">
+                            <img src="http://s0a.topgearrussia.ru/sh/77103438c8b28c61806bf2fa1ead1f0a/images/preview/d4/26/84/e1d2d54c6310b28a19736ea437.jpeg">
+                            <div class="brand bg-dark opacity">
+                                <span class="text">ПАРНЫЙ ТЕСТ: FORMULA ROSSA VS LAFERRARI</span>
+                            </div>
+                        </a>
+                        <a href="http://www.topgearrussia.ru/planet/faces/227112/234c8f2d.html" class="tile-content image">
+                            <img src="http://s08.topgearrussia.ru/sh/ff1b935c18dc06ab673d975b8b34dfb5/images/preview/e5/9d/d4/b36884da7d29ffc9b9e2988a05.jpeg">
+                            <div class="brand bg-dark opacity">
+                                <span class="text">ПОЛИРОВКА С ПОНТАМИ</span>
+                            </div>
+                        </a>
+                        <a href="http://www.topgearrussia.ru/columns/richard-hammond/227001/d0ef9147.html" class="tile-content image">
+                            <img src="http://s08.topgearrussia.ru/sh/b648dcdc595c869c56d86ce22a51ee60/images/preview/f8/7b/8a/58e69ecc872d6a8d87b1d33bfe.jpeg">
+                            <div class="brand bg-dark opacity">
+                                <span class="text">ХАММОНД ЗА РУЛЕМ ЛЕГЕНДЫ: MITSUBISHI EVO VI</span>
+                            </div>
+                        </a>
+                        <a href="http://www.topgearrussia.ru/tv-show/sguide/211038/6b21b924.html" class="tile-content image">
+                            <img src="http://s09.topgearrussia.ru/sh/cc907e7512d603f77b9ed5b1d73cceb3/images/preview/21/a3/3f/8cc57d740a0ee3dd10c870e487.jpeg">
+                            <div class="brand bg-dark opacity">
+                                <span class="text">АМЕРИКАНСКОЕ ПУТЕШЕСТВИЕ НА LEXUS LFA, ASTON MARTIN VANQUISH И SRT VIPER - ЧАСТЬ 3</span>
+                            </div>
+                        </a>                                                
+                    </div>
+                </td>
+            </tr>
+        </table>        
+    </div>
+
+    <div id="workspace-list">
+        <div class="listview-outlook" id="entities-list"></div>
+        <div id="entity-details"></div>
+    </div>
+
+    <div id="workspace-empty">
+        <div class="listview-outlook" id="entities-list"></div>
+        <div id="entity-details"></div>
+    </div>
+        
+</div>
+
+<!--# ITEMS TEMPLATES #-->
+@Html.Partial("_EngineItem")
+@Html.Partial("_EngineItemInfo")
+@Html.Partial("_EngineItemForm")
+@Html.Partial("_JobTitleItem")
+@Html.Partial("_JobTitleItemInfo")
+@Html.Partial("_JobTitleItemForm")
+@Html.Partial("_UserItem")
+@Html.Partial("_UserItemInfo")
+@Html.Partial("_UserItemForm")
+@Html.Partial("_UserProfileForm")
+@Html.Partial("_TestItem")
+@Html.Partial("_TestItemView")
+@Html.Partial("_TestItemForm")
+<!--# END ITEMS TEMPLATES #-->

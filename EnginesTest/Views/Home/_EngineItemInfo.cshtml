@@ -1,0 +1,28 @@
+﻿<script type="text/html" id="engine-iteminfo-template">
+    <h2 class="fg-white">{%UID%}</h2>
+    <h6 class="fg-lightBlue">UID</h6>
+    <h2 class="fg-white">{%Model%} / {%SerialNumber%}</h2>    
+    <h6 class="fg-lightBlue">Model / Serial Number</h6>  
+    <h2 class="fg-white">{%Configuration%} / {%EngineCapacity%}L / {%Cylinders%} / {%ValversPerCylinder%}</h2>    
+    <h6 class="fg-lightBlue">Configuration / EngineCapacity / Cylinders / Valvers per Cylinder</h6>  
+    <h2 class="fg-white">{%FuelType%}</h2>
+    <h6 class="fg-lightBlue">Fuel Type</h6>
+    <h2 class="fg-white">{%RatedTorque%}</h2>
+    <h6 class="fg-lightBlue">Rated Torque </h6> 
+    <button class="button bg-lightBlue fg-white" type="button" onclick="Application.Tests.Add()"><span class="icon-meter-fast"></span> Run New Test</button>
+    <div id="engines-tests">
+        <table class="table striped hovered dataTable">
+            <thead>
+                <tr>
+                    <th>Date/Time</th>
+                    <th>Tester</th>
+                    <th>Incoming Air, C&deg;</th>
+                    <th>Pressure, bar</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>   
+</script>

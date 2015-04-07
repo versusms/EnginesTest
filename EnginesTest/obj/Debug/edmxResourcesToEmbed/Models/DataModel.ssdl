@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DataModelStoreContainer">
+    <EntitySet Name="Measurements" EntityType="DataModel.Store.Measurements" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tests" EntityType="DataModel.Store.Tests" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Engines" EntityType="DataModel.Store.Engines" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="DataModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JobTitles" EntityType="DataModel.Store.JobTitles" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="TestMeasurement" Association="DataModel.Store.TestMeasurement">
+      <End Role="Test" EntitySet="Tests" />
+      <End Role="Measurement" EntitySet="Measurements" />
+    </AssociationSet>
+    <AssociationSet Name="EngineTest" Association="DataModel.Store.EngineTest">
+      <End Role="Engine" EntitySet="Engines" />
+      <End Role="Test" EntitySet="Tests" />
+    </AssociationSet>
+    <AssociationSet Name="UserTest" Association="DataModel.Store.UserTest">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Test" EntitySet="Tests" />
+    </AssociationSet>
+    <AssociationSet Name="JobTitleUser" Association="DataModel.Store.JobTitleUser">
+      <End Role="JobTitle" EntitySet="JobTitles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Measurements">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TestId" Type="int" Nullable="false" />
+    <Property Name="Torque" Type="int" Nullable="false" />
+    <Property Name="RPM" Type="int" Nullable="false" />
+    <Property Name="FuelConsumption" Type="float" Nullable="false" />
+    <Property Name="TCoolant" Type="float" Nullable="false" />
+    <Property Name="TOil" Type="float" Nullable="false" />
+    <Property Name="TFuel" Type="float" Nullable="false" />
+    <Property Name="TExhaustGas" Type="float" Nullable="false" />
+    <Property Name="POil" Type="float" Nullable="false" />
+    <Property Name="PExhaustGas" Type="float" Nullable="false" />
+    <Property Name="PowerHP" Type="float" Nullable="false" />
+    <Property Name="PowerKWh" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tests">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UID" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="DateTime" Type="datetime" Nullable="false" />
+    <Property Name="EngineId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="TIncomingAir" Type="float" Nullable="false" />
+    <Property Name="PBarometric" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Engines">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UID" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Model" Type="nvarchar" Nullable="false" MaxLength="11" />
+    <Property Name="SerialNumber" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="Configuration" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Cylinders" Type="int" Nullable="false" />
+    <Property Name="EngineCapacity" Type="float" Nullable="false" />
+    <Property Name="ValversPerCylinder" Type="int" Nullable="false" />
+    <Property Name="FuelType" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="RatedTorque" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="MiddleName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="JobTitleId" Type="int" Nullable="false" />
+    <Property Name="ProfileImage" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="SecurityUM" Type="bit" Nullable="false" />
+    <Property Name="SecurityTV" Type="bit" Nullable="false" />
+    <Property Name="SecurityTM" Type="bit" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobTitles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="TestMeasurement">
+    <End Role="Test" Type="DataModel.Store.Tests" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Measurement" Type="DataModel.Store.Measurements" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Test">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Measurement">
+        <PropertyRef Name="TestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EngineTest">
+    <End Role="Engine" Type="DataModel.Store.Engines" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Test" Type="DataModel.Store.Tests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Engine">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Test">
+        <PropertyRef Name="EngineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserTest">
+    <End Role="User" Type="DataModel.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Test" Type="DataModel.Store.Tests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Test">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobTitleUser">
+    <End Role="JobTitle" Type="DataModel.Store.JobTitles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="User" Type="DataModel.Store.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobTitle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="JobTitleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

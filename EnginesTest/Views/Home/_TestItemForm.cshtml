@@ -1,0 +1,30 @@
+﻿<script type="text/html" id="test-itemform-template">  
+    <input type="hidden" id="test-itemform-id" name="Id" value="{%Id%}" />              
+    <h2 class="fg-white">UID</h2>
+    <div class="input-control text">
+        <input type="text" id="test-itemform-uid" name="UID" value="{%UID%}" placeholder="input UID..." readonly/>
+        <span class="fg-lightBlue">This field fills automaticly</span>
+    </div>  
+    <h2 class="fg-white">DateTime</h2>
+    <div class="input-control text">
+        <input type="text" id="test-itemform-datetime" name="DateTime" value="{%DateTime%}" placeholder="input datetime..." readonly/>
+        <span class="fg-lightBlue">This field fills automaticly</span>
+    </div>
+    <input type="hidden" id="test-itemform-engineid" name="EngineId" value="{%EngineId%}" />  
+    <h2 class="fg-white"><span class="fg-red">*</span>Engine: <span class="fg-lightBlue">{%Engine%}</span></h2>
+    <h2 class="fg-white"><span class="fg-red">*</span>Incoming Air Temperature, C&deg;</h2>
+    <div class="input-control text">
+        <input type="number" id="test-itemform-tincomingair" name="TIncomingAir" value="{%TIncomingAir%}" placeholder="input incoming air temperature..."/>
+        <button class="btn-clear"></button>        
+    </div>
+    <h2 class="fg-white"><span class="fg-red">*</span>Barometric Pressure, bar</h2>
+    <div class="input-control text">
+        <input type="number" id="test-itemform-pbarometric" name="PBarometric" value="{%PBarometric%}" placeholder="input barometric pressure..."/>
+        <button class="btn-clear"></button>        
+    </div>
+    <input type="hidden" id="test-itemform-userid" name="UserId" value="{%UserId%}" />
+    <h2 class="fg-white"><span class="fg-red">*</span>User: <span class="fg-lightBlue">{%User%}</span></h2>    
+    <br />
+    <button class="button primary" type="button" onclick="Application.Tests.Run()">Run Test</button>
+    <button class="button" type="button" onclick="$.Dialog.close()">Cancel</button>
+</script>

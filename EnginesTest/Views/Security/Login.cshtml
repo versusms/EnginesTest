@@ -1,0 +1,47 @@
+﻿@model EnginesTest.Models.LoginPageView
+
+@{
+    ViewBag.Title = "Engine Test App - Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<nav class="navigation-bar dark">
+    <nav class="navigation-bar-content">
+        <a class="element" href="/">
+           <span class="icon-steering-wheel"></span> ENGINES TEST APP
+        </a>        
+    </nav>
+</nav>
+
+<div class="login-container">
+    <table>
+        <tr>
+            <td class="login-logo"><span class="logo icon-steering-wheel"></td>
+            <td class="login-form">
+                <h2 class="subheader">Login</h2>
+
+                @using (Html.BeginForm()) {
+                    @Html.ValidationSummary(true)
+    
+                    <label>@Html.LabelFor(model => model.Login)</label>
+                    <div class="editor-field input-control text @if (!ViewData.ModelState.IsValidField("Login")) { @Html.Raw("error-state") }">
+                        @Html.EditorFor(model => model.Login, new {placeholder = "ssss"})
+                        <button class="btn-clear"></button>
+                        @Html.ValidationMessageFor(model => model.Login)
+                    </div>
+
+                    <label>@Html.LabelFor(model => model.Password)</label>
+                    <div class="editor-field input-control password @if (!ViewData.ModelState.IsValidField("Password")) { @Html.Raw("error-state") }">
+                        @Html.EditorFor(model => model.Password)
+                        <button class="btn-reveal"></button>
+                        @Html.ValidationMessageFor(model => model.Password)
+                    </div>
+
+                    <div class="toolbar">
+                        <button class="large primary">Login</button>
+                    </div>
+                }
+            </td>
+        </tr>
+    </table>
+</div>

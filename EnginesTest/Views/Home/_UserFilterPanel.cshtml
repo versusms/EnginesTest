@@ -1,0 +1,28 @@
+﻿<nav id="filters-users" class="navigation-bar entity-filters">
+    <nav class="navigation-bar-content">
+        <div class="element input-element">
+            <div class="input-control text">
+                <input type="text" placeholder="Search..." id="filters-users-search">
+                <button class="btn-search"></button>
+            </div>
+        </div>
+        <span class="element-divider"></span>
+        <div class="element input-element">
+            <div class="input-control checkbox">
+                <label>
+                    <input type="checkbox" id="filters-users-deleted"/>
+                    <span class="check"></span>
+                    Show Deleted Users
+                </label>
+            </div>
+        </div>          
+    </nav>    
+</nav>
+<script type="text/javascript">
+    $('#filters-users input').change(function () {
+        Application.Users.ApplyFilters();
+    })
+    .keyup(function () {
+        Application.Users.ApplyFilters();
+    });
+</script>

@@ -1,0 +1,9 @@
+﻿<script type="text/html" id="jobtitle-itemform-template">
+    <h2 class="fg-white"><span class="fg-red">*</span>Title</h2>
+    <div class="input-control text">
+        <input type="text" id="jobtitle-itemform-title" name="Title" value="{%Title%}" placeholder="input title..."/>
+        <button class="btn-clear"></button>
+    </div>    
+    <button class="button primary" type="button" onclick="Application.JobTitles.Save()">Save</button>
+    <button class="button" type="button" onclick="Application.JobTitles.Select(Application.JobTitles.Current)">Cancel</button>
+</script>
