@@ -319,25 +319,25 @@
     <Content Include="Views\Security\Login.cshtml" />
     <Content Include="Views\Init\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\_EngineFilterPanel.cshtml" />
-    <Content Include="Views\Home\_EngineItem.cshtml" />
-    <Content Include="Views\Home\_UserFilterPanel.cshtml" />
-    <Content Include="Views\Home\_JobTitleFilterPanel.cshtml" />
+    <Content Include="Views\Engines\_EngineFilterPanel.cshtml" />
+    <Content Include="Views\Engines\_EngineItem.cshtml" />
+    <Content Include="Views\Users\_UserFilterPanel.cshtml" />
+    <Content Include="Views\JobTitles\_JobTitleFilterPanel.cshtml" />
     <Content Include="Views\Home\_TopNavigation.cshtml" />
     <Content Include="Views\Home\_Sidebar.cshtml" />
-    <Content Include="Views\Home\_JobTitleItem.cshtml" />
-    <Content Include="Views\Home\_UserItem.cshtml" />
-    <Content Include="Views\Home\_JobTitleItemInfo.cshtml" />
-    <Content Include="Views\Home\_JobTitleItemForm.cshtml" />
-    <Content Include="Views\Home\_UserItemInfo.cshtml" />
-    <Content Include="Views\Home\_UserItemForm.cshtml" />
-    <Content Include="Views\Home\_EngineItemInfo.cshtml" />
-    <Content Include="Views\Home\_TestItem.cshtml" />
-    <Content Include="Views\Home\_EngineItemForm.cshtml" />
-    <Content Include="Views\Home\_TestItemView.cshtml" />
+    <Content Include="Views\JobTitles\_JobTitleItem.cshtml" />
+    <Content Include="Views\Users\_UserItem.cshtml" />
+    <Content Include="Views\JobTitles\_JobTitleItemInfo.cshtml" />
+    <Content Include="Views\JobTitles\_JobTitleItemForm.cshtml" />
+    <Content Include="Views\Users\_UserItemInfo.cshtml" />
+    <Content Include="Views\Users\_UserItemForm.cshtml" />
+    <Content Include="Views\Engines\_EngineItemInfo.cshtml" />
+    <Content Include="Views\Tests\_TestItem.cshtml" />
+    <Content Include="Views\Engines\_EngineItemForm.cshtml" />
+    <Content Include="Views\Tests\_TestItemView.cshtml" />
     <Content Include="Scripts\sprintf.min.map" />
-    <Content Include="Views\Home\_TestItemForm.cshtml" />
-    <Content Include="Views\Home\_UserProfileForm.cshtml" />
+    <Content Include="Views\Tests\_TestItemForm.cshtml" />
+    <Content Include="Views\Users\_UserProfileForm.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

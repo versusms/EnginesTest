@@ -26,9 +26,15 @@
         </nav>
     </nav>
     <!--# FILTERS PANELS #-->
-    @Html.Partial("_EngineFilterPanel")
-    @Html.Partial("_JobTitleFilterPanel")
-    @Html.Partial("_UserFilterPanel")    
+    @if (ViewBag.STV)
+    {
+        @Html.Partial("../Engines/_EngineFilterPanel")
+    }
+    @if (ViewBag.SUM)
+    {
+        @Html.Partial("../JobTitles/_JobTitleFilterPanel")
+        @Html.Partial("../Users/_UserFilterPanel")    
+    }
     <!--# END FILTERS PANELS #-->           
 
     <div id="workspace-dashboard">
@@ -127,25 +133,25 @@
 <!--# ITEMS TEMPLATES #-->
 @if (ViewBag.STV)
 {
-    @Html.Partial("_EngineItem")
-    @Html.Partial("_EngineItemInfo")    
-    @Html.Partial("_TestItem")
-    @Html.Partial("_TestItemView")
+    @Html.Partial("../Engines/_EngineItem")
+    @Html.Partial("../Engines/_EngineItemInfo")    
+    @Html.Partial("../Tests/_TestItem")
+    @Html.Partial("../Tests/_TestItemView")
     
 }
 @if (ViewBag.STM)
 {
-    @Html.Partial("_EngineItemForm")
-    @Html.Partial("_TestItemForm")
+    @Html.Partial("../Engines/_EngineItemForm")
+    @Html.Partial("../Tests/_TestItemForm")
 }
 @if (ViewBag.SUM)
 {
-    @Html.Partial("_JobTitleItem")
-    @Html.Partial("_JobTitleItemInfo")
-    @Html.Partial("_JobTitleItemForm")
-    @Html.Partial("_UserItem")
-    @Html.Partial("_UserItemInfo")
-    @Html.Partial("_UserItemForm")    
+    @Html.Partial("../JobTitles/_JobTitleItem")
+    @Html.Partial("../JobTitles/_JobTitleItemInfo")
+    @Html.Partial("../JobTitles/_JobTitleItemForm")
+    @Html.Partial("../Users/_UserItem")
+    @Html.Partial("../Users/_UserItemInfo")
+    @Html.Partial("../Users/_UserItemForm")    
 }
-@Html.Partial("_UserProfileForm")
+@Html.Partial("../Users/_UserProfileForm")
 <!--# END ITEMS TEMPLATES #-->
