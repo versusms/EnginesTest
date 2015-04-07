@@ -154,7 +154,9 @@
     <Compile Include="Security\SecurityManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\rss.xml" />
+    <Content Include="App_Data\rss.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Images\ProfileImages\2d411823860740789b051c4cb06a1e7a.jpg" />
     <Content Include="Content\Images\ProfileImages\4ba6843506b3472fb9c634cc0d4187a8.jpg" />

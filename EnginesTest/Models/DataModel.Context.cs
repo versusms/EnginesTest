@@ -16,7 +16,10 @@ namespace EnginesTest.Models
     public partial class DataModelContainer : DbContext
     {
         public DataModelContainer()
-            : base("name=DataModelContainer")
+            // Подключение к LocalDB
+            //: base("name=LocalDataModelContainer")
+            // Подключение к удаленному MSSQL-серверу
+            : base("name=RemoteDataModelContainer")
         {
         }
     
