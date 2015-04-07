@@ -590,8 +590,10 @@ Application.Engines.InitWorkspace = function (afterRender) {
         $('#entities-list, #entity-details').html('');
         if (response.Success) {
             Application.Engines.List = response.DataSet;
-            $('#filters-engines, #item-create').show();
-            $('#item-create').off('click').click(Application.Engines.Add);
+            $('#filters-engines').show();
+            if (cuser.STM) {
+                $('#item-create').show().off('click').click(Application.Engines.Add);
+            }
             Application.Engines.RenderList(afterRender);
             Application.Engines.ApplyFilters();
         }
@@ -621,8 +623,10 @@ Application.Engines.Select = function (id, callback) {
             if (response.Success) {
                 Application.Engines.Current = response.DataSet.Id;
                 $('#entity-details').html(Application.ParseTemplate('engine-iteminfo-template', response.DataSet, true, false, true));
-                $('#item-edit').show().off('click').click(Application.Engines.Edit);
-                $('#item-delete').show().off('click').click(Application.Engines.Delete);
+                if (cuser.STM) {
+                    $('#item-edit').show().off('click').click(Application.Engines.Edit);
+                    $('#item-delete').show().off('click').click(Application.Engines.Delete);
+                }
                 $.get("/api/tests/", { EngineId: Application.Engines.Current }, function (response) {                    
                     if (response.Success) {
                         Application.Tests.List = response.DataSet;
@@ -829,7 +833,7 @@ Application.Tests.RenderList = function (afterRender) {
     }
     $('#engines-tests table').DataTable({ 
         "columnDefs": [
-            { "orderable": false, "searchable": false, "targets": 4 }
+            { "orderable": false, "searchable": false, "targets": (cuser.STM ? 4 : 3) }
         ]
     });
     $('#engines-tests table tbody tr td:not(:last-child)').not(':last').click(Application.Tests.Select);

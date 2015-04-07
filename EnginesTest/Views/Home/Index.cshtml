@@ -125,17 +125,28 @@
 </div>
 
 <!--# ITEMS TEMPLATES #-->
-@Html.Partial("_EngineItem")
-@Html.Partial("_EngineItemInfo")
-@Html.Partial("_EngineItemForm")
-@Html.Partial("_JobTitleItem")
-@Html.Partial("_JobTitleItemInfo")
-@Html.Partial("_JobTitleItemForm")
-@Html.Partial("_UserItem")
-@Html.Partial("_UserItemInfo")
-@Html.Partial("_UserItemForm")
-@Html.Partial("_UserProfileForm")
-@Html.Partial("_TestItem")
-@Html.Partial("_TestItemView")
-@Html.Partial("_TestItemForm")
+@if (ViewBag.STV)
+{
+    @Html.Partial("_EngineItem")
+    @Html.Partial("_EngineItemInfo")    
+    @Html.Partial("_TestItem")
+    @Html.Partial("_TestItemView")
+    
+}
+@if (ViewBag.STM)
+{
+    @Html.Partial("_EngineItemForm")
+    @Html.Partial("_TestItemForm")
+}
+@if (ViewBag.SUM)
+{
+    @Html.Partial("_JobTitleItem")
+    @Html.Partial("_JobTitleItemInfo")
+    @Html.Partial("_JobTitleItemForm")
+    @Html.Partial("_UserItem")
+    @Html.Partial("_UserItemInfo")
+    @Html.Partial("_UserItemForm")
+    @Html.Partial("_UserProfileForm")
+}
+
 <!--# END ITEMS TEMPLATES #-->

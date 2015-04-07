@@ -4,8 +4,11 @@
         <td>{%User%}</td>
         <td align="center">{%TIncomingAir%}</td>
         <td align="center">{%PBarometric%}</td>
-        <td align="center">            
-            <a href="javascript:void(0)" title="Delete" data-rel="{%Id%}"><span class="icon-remove"></span></a>
-        </td>
+        @if (ViewBag.STM)
+        {
+            <td align="center">            
+                <a href="javascript:void(0)" title="Delete" data-rel="{%Id%}"><span class="icon-remove"></span></a>
+            </td>
+        }
     </tr>
 </script>

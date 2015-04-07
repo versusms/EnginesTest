@@ -8,8 +8,11 @@
     <h2 class="fg-white">{%FuelType%}</h2>
     <h6 class="fg-lightBlue">Fuel Type</h6>
     <h2 class="fg-white">{%RatedTorque%}</h2>
-    <h6 class="fg-lightBlue">Rated Torque </h6> 
-    <button class="button bg-lightBlue fg-white" type="button" onclick="Application.Tests.Add()"><span class="icon-meter-fast"></span> Run New Test</button>
+    <h6 class="fg-lightBlue">Rated Torque </h6>
+    @if (ViewBag.STM)
+    { 
+        <button class="button bg-lightBlue fg-white" type="button" onclick="Application.Tests.Add()"><span class="icon-meter-fast"></span> Run New Test</button>
+    }
     <div id="engines-tests">
         <table class="table striped hovered dataTable">
             <thead>
@@ -18,7 +21,10 @@
                     <th>Tester</th>
                     <th>Incoming Air, C&deg;</th>
                     <th>Pressure, bar</th>
-                    <th></th>
+                    @if (ViewBag.STM)
+                    {
+                        <th></th>
+                    }
                 </tr>
             </thead>
             <tbody>

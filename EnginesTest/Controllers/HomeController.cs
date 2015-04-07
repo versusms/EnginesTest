@@ -31,6 +31,7 @@ namespace EnginesTest.Controllers
                 SUM = CurrentUser.SecurityUM
             });
             ViewBag.STV = CurrentUser.SecurityTV;
+            ViewBag.STM = CurrentUser.SecurityTM;
             ViewBag.SUM = CurrentUser.SecurityUM;
             ViewBag.UserProfileImage = CurrentUser.ProfileImage;
             ViewBag.EnginesCount = DataBase.Engines.Count();
